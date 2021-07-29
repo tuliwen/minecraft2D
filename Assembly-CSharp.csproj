@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\script\touchTilemap.cs" />
+     <Compile Include="Assets\script\pigController.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:/Unity/2020.3.14f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
