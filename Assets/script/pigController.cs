@@ -13,7 +13,8 @@ public class pigController : MonoBehaviour
     public LayerMask Ground;
 
     public Collider2D collider2D;
-
+	private float inputHorizontal;
+	private float inputVertical;
 
     void Start()
     {
@@ -25,6 +26,11 @@ public class pigController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        move();
+        jump();
+    }
+
+    void move(){
         float horizontalmove = Input.GetAxis("Horizontal");
         float facedirection = Input.GetAxisRaw("Horizontal");
         if(facedirection!=0){
@@ -34,12 +40,25 @@ public class pigController : MonoBehaviour
         {
             m_rg.velocity = new Vector2(horizontalmove*MoveSpeed, m_rg.velocity.y);
         }
+        inputHorizontal = SimpleInput.GetAxis("Horizontal");
+        inputVertical = SimpleInput.GetAxis("Vertical");
+        if(inputHorizontal!=0){
+            m_rg.velocity = new Vector2(inputHorizontal*MoveSpeed, m_rg.velocity.y);
+            if(inputHorizontal>0){
+                transform.localScale = new Vector3(-1,1,1);
+            }else{
+                transform.localScale = new Vector3(1,1,1);
+            }
+        }
+        if(inputVertical!=0){
 
-        if (Input.GetButtonDown("Jump")&&collider2D.IsTouchingLayers(Ground))
+        }
+        name.transform.localPosition = new Vector2(m_rg.transform.localPosition.x - 0.16f, m_rg.transform.localPosition.y + 0.91f);
+    }
+    void jump(){
+        if (Input.GetButtonDown("Jump")&&collider2D.IsTouchingLayers(Ground) ||inputVertical!=0&&collider2D.IsTouchingLayers(Ground))
         {
             m_rg.velocity = new Vector2(m_rg.velocity.x, MoveSpeed);
         }
-
-        name.transform.localPosition = new Vector2(m_rg.transform.localPosition.x - 0.73f, m_rg.transform.localPosition.y + 0.91f);
     }
 }

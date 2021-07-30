@@ -31,7 +31,7 @@ public class touchTilemap : MonoBehaviour
             //tb.hideFlags = HideFlags.None;
             Debug.Log("鼠标坐标" + mousePosition + "世界" + wordPosition + "cell" + cellPosition + "tb" + tb.name);
             //某个地方设置为空，就是把那个地方小格子销毁了
-            tilemap.SetTile(cellPosition, null);
+            // tilemap.SetTile(cellPosition, null);
             //tilemap.RefreshAllTiles();
         }
 
@@ -50,7 +50,7 @@ public class touchTilemap : MonoBehaviour
             //tb.hideFlags = HideFlags.None;
             //Debug.Log("鼠标坐标" + mousePosition + "世界" + wordPosition + "cell" + cellPosition + "tb" + tb.name);
             //格子填充
-            tilemap.SetTile(cellPosition, baseTile);
+            // tilemap.SetTile(cellPosition, baseTile);
             //tilemap.RefreshAllTiles();
         }
     }

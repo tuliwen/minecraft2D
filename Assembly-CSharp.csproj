@@ -38,6 +38,8 @@
   <ItemGroup>
      <Compile Include="Assets\script\touchTilemap.cs" />
      <Compile Include="Assets\script\pigController.cs" />
+     <Compile Include="Assets\script\CameraTrans.cs" />
+     <None Include="Assets\shader\leafs.shader" />
     <Reference Include="UnityEngine">
         <HintPath>D:/Unity/2020.3.14f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -691,6 +693,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="SimpleInput.Runtime.csproj">
+      <Project>{d18294f8-b8e0-3f33-0997-ecbbe4e7bce6}</Project>
+      <Name>SimpleInput.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="SimpleInput.Editor.csproj">
+      <Project>{97ab3188-9b6f-0751-21d4-c1016a3f3b29}</Project>
+      <Name>SimpleInput.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
