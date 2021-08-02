@@ -6,7 +6,7 @@ public class pigController : MonoBehaviour
 {
     private Rigidbody2D m_rg;
 
-    public GameObject name;
+    public GameObject Playername;
 
     public float MoveSpeed;
 
@@ -53,12 +53,12 @@ public class pigController : MonoBehaviour
         if(inputVertical!=0){
 
         }
-        name.transform.localPosition = new Vector2(m_rg.transform.localPosition.x - 0.16f, m_rg.transform.localPosition.y + 0.91f);
+        Playername.transform.localPosition = new Vector2(m_rg.transform.localPosition.x - 0.16f, m_rg.transform.localPosition.y + 0.91f);
     }
     void jump(){
         if (Input.GetButtonDown("Jump")&&collider2D.IsTouchingLayers(Ground) ||inputVertical!=0&&collider2D.IsTouchingLayers(Ground))
         {
-            m_rg.velocity = new Vector2(m_rg.velocity.x, MoveSpeed);
+            m_rg.velocity = new Vector2(m_rg.velocity.x, MoveSpeed*1.5f);
         }
     }
 }
